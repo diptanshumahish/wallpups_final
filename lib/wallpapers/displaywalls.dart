@@ -31,7 +31,10 @@ class Wallpapers extends StatelessWidget {
             return GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => FullScreen(index: index)));
+                    builder: (context) => FullScreen(
+                          index: index,
+                          type: type,
+                        )));
               },
               child: Container(
                 decoration: BoxDecoration(

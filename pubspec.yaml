@@ -37,6 +37,8 @@ dependencies:
   cached_network_image: ^3.2.1
   flutter_cache_manager: ^3.3.0
   google_fonts: ^3.0.1
+  path_provider: ^2.0.11
+  wallpaper_manager_flutter: ^0.0.2
 
 dev_dependencies:
   flutter_test:
