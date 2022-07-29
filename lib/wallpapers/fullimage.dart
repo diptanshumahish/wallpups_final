@@ -76,7 +76,7 @@ class FullScreen extends StatelessWidget {
                             letterSpacing: 0.4,
                             fontSize: 14),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Row(
@@ -126,7 +126,7 @@ class FullScreen extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
-                                  children: [
+                                  children: const [
                                     Text(
                                       "Set Wallpaper",
                                       style: TextStyle(color: Colors.white),
@@ -183,7 +183,7 @@ class FullScreen extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
-                                  children: [
+                                  children: const [
                                     Text(
                                       "Set Wallpaper",
                                       style: TextStyle(color: Colors.white),
@@ -240,7 +240,7 @@ class FullScreen extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
-                                  children: [
+                                  children: const [
                                     Text(
                                       "Set Wallpaper",
                                       style: TextStyle(color: Colors.white),
