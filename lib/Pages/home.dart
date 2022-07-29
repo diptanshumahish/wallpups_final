@@ -20,12 +20,38 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final controller = PageController(
+    initialPage: 0,
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    controller.addListener(() {
+      if (controller.page == 0) {
+        setState(() {
+          page1 = true;
+          page2 = false;
+          page3 = false;
+        });
+      } else if (controller.page == 1) {
+        setState(() {
+          page1 = false;
+          page2 = true;
+          page3 = false;
+        });
+      } else if (controller.page == 2) {
+        setState(() {
+          page1 = false;
+          page2 = false;
+          page3 = true;
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final controller = PageController(
-      initialPage: 0,
-    );
-
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(

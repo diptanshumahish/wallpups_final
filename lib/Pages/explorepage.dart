@@ -112,7 +112,9 @@ class _ExplorePageState extends State<ExplorePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GestureDetector(
+                      InkWell(
+                        borderRadius: BorderRadius.circular(7),
+                        splashColor: Colors.deepPurple,
                         onTap: (() {
                           Navigator.push(
                               context,
@@ -122,41 +124,41 @@ class _ExplorePageState extends State<ExplorePage> {
                         }),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(7),
-                          child: InkWell(
-                            child: SizedBox(
-                              width: width / 2.3,
-                              height: height / 9.5,
-                              child: Stack(children: [
-                                Image(
-                                    color: Colors.black.withOpacity(0.3),
-                                    colorBlendMode: BlendMode.dstIn,
-                                    width: width,
-                                    fit: BoxFit.cover,
-                                    image: const CachedNetworkImageProvider(
-                                        "https://source.unsplash.com/random/1920x1080/?sunset")),
-                                Positioned(
-                                    left: 10,
-                                    bottom: 10,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: const [
-                                        Text("Sunsets",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20)),
-                                        Text("the drowning sun?",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 15)),
-                                      ],
-                                    ))
-                              ]),
-                            ),
+                          child: SizedBox(
+                            width: width / 2.3,
+                            height: height / 9.5,
+                            child: Stack(children: [
+                              Image(
+                                  color: Colors.black.withOpacity(0.3),
+                                  colorBlendMode: BlendMode.dstIn,
+                                  width: width,
+                                  fit: BoxFit.cover,
+                                  image: const CachedNetworkImageProvider(
+                                      "https://source.unsplash.com/random/1920x1080/?sunset")),
+                              Positioned(
+                                  left: 10,
+                                  bottom: 10,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      Text("Sunsets",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20)),
+                                      Text("the drowning sun?",
+                                          style: TextStyle(
+                                              color: Colors.white70,
+                                              fontSize: 15)),
+                                    ],
+                                  ))
+                            ]),
                           ),
                         ),
                       ),
-                      GestureDetector(
+                      InkWell(
+                        borderRadius: BorderRadius.circular(7),
+                        splashColor: Colors.deepPurple,
                         onTap: (() {
                           Navigator.push(
                               context,
@@ -191,7 +193,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                                 fontSize: 20)),
                                         Text("For the long drives",
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.white70,
                                                 fontSize: 15)),
                                       ],
                                     ))
@@ -208,7 +210,9 @@ class _ExplorePageState extends State<ExplorePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GestureDetector(
+                      InkWell(
+                        borderRadius: BorderRadius.circular(7),
+                        splashColor: Colors.deepPurple,
                         onTap: (() {
                           Navigator.push(
                               context,
@@ -243,7 +247,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                                 fontSize: 20)),
                                         Text("Some anime stuff?",
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.white70,
                                                 fontSize: 15)),
                                       ],
                                     ))
@@ -252,7 +256,9 @@ class _ExplorePageState extends State<ExplorePage> {
                           ),
                         ),
                       ),
-                      GestureDetector(
+                      InkWell(
+                        borderRadius: BorderRadius.circular(7),
+                        splashColor: Colors.deepPurple,
                         onTap: (() {
                           Navigator.push(
                               context,
@@ -287,7 +293,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                                 fontSize: 20)),
                                         Text("The Nature!",
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.white70,
                                                 fontSize: 15)),
                                       ],
                                     ))
@@ -304,7 +310,9 @@ class _ExplorePageState extends State<ExplorePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GestureDetector(
+                      InkWell(
+                        borderRadius: BorderRadius.circular(7),
+                        splashColor: Colors.deepPurple,
                         onTap: (() {
                           Navigator.push(
                               context,
@@ -339,7 +347,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                                 fontSize: 20)),
                                         Text("minimalistic stuff",
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.white70,
                                                 fontSize: 15)),
                                       ],
                                     ))
@@ -348,7 +356,9 @@ class _ExplorePageState extends State<ExplorePage> {
                           ),
                         ),
                       ),
-                      GestureDetector(
+                      InkWell(
+                        borderRadius: BorderRadius.circular(7),
+                        splashColor: Colors.deepPurple,
                         onTap: (() {
                           Navigator.push(
                               context,
@@ -383,7 +393,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                                 fontSize: 20)),
                                         Text("The Nature!",
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.white70,
                                                 fontSize: 15)),
                                       ],
                                     ))
@@ -400,7 +410,9 @@ class _ExplorePageState extends State<ExplorePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GestureDetector(
+                      InkWell(
+                        borderRadius: BorderRadius.circular(7),
+                        splashColor: Colors.deepPurple,
                         onTap: (() {
                           Navigator.push(
                               context,
@@ -435,7 +447,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                                 fontSize: 20)),
                                         Text("sleepy nights",
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.white70,
                                                 fontSize: 15)),
                                       ],
                                     ))
@@ -444,7 +456,9 @@ class _ExplorePageState extends State<ExplorePage> {
                           ),
                         ),
                       ),
-                      GestureDetector(
+                      InkWell(
+                        borderRadius: BorderRadius.circular(7),
+                        splashColor: Colors.deepPurple,
                         onTap: (() {
                           Navigator.push(
                               context,
@@ -479,7 +493,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                                 fontSize: 20)),
                                         Text("The festivities",
                                             style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.white70,
                                                 fontSize: 15)),
                                       ],
                                     ))
