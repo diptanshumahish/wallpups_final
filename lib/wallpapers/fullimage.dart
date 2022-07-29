@@ -33,7 +33,7 @@ class FullScreen extends StatelessWidget {
             onPressed: () => Navigator.pop(context, false),
           ),
           title: const Text(
-            "Image preview",
+            "Preview Wallpaper",
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
@@ -76,64 +76,191 @@ class FullScreen extends StatelessWidget {
                             letterSpacing: 0.4,
                             fontSize: 14),
                       ),
-                      GestureDetector(
-                        onTap: (() async {
-                          String url =
-                              'https://source.unsplash.com/random/1080x1920?$type/$index';
-                          int location = WallpaperManagerFlutter.HOME_SCREEN;
-                          WallpaperManagerFlutter().setwallpaperfromFile(
-                              await DefaultCacheManager().getSingleFile(url),
-                              location);
-                        }),
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(vertical: 10),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 10),
-                          decoration: BoxDecoration(
-                              color: Colors.deepPurple.withOpacity(0.7),
-                              borderRadius: BorderRadius.circular(5)),
-                          child: const Text(
-                            "Set Wallpaper",
-                            style: TextStyle(color: Colors.white),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InkWell(
+                            splashColor: Colors.white,
+                            onTap: (() async {
+                              String url =
+                                  'https://source.unsplash.com/random/1080x1920?$type/$index';
+                              int location =
+                                  WallpaperManagerFlutter.BOTH_SCREENS;
+                              WallpaperManagerFlutter().setwallpaperfromFile(
+                                  await DefaultCacheManager()
+                                      .getSingleFile(url),
+                                  location);
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      CupertinoAlertDialog(
+                                        insetAnimationDuration:
+                                            const Duration(seconds: 1),
+                                        title: const Text(
+                                          " Wallpaper set",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.green),
+                                        ),
+                                        content: const Text(
+                                            "Check out your new wallpaper"),
+                                        actions: <Widget>[
+                                          CupertinoDialogAction(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: const Text("done",
+                                                  style: TextStyle(
+                                                      color:
+                                                          Colors.deepPurple)))
+                                        ],
+                                      ));
+                            }),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.deepPurple.withOpacity(0.7),
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Set Wallpaper",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text(
+                                      "Both Screens",
+                                      style: TextStyle(color: Colors.white70),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          InkWell(
+                            onTap: (() async {
+                              String url =
+                                  'https://source.unsplash.com/random/1080x1920?$type/$index';
+                              int location =
+                                  WallpaperManagerFlutter.LOCK_SCREEN;
+                              WallpaperManagerFlutter().setwallpaperfromFile(
+                                  await DefaultCacheManager()
+                                      .getSingleFile(url),
+                                  location);
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      CupertinoAlertDialog(
+                                        insetAnimationDuration:
+                                            const Duration(seconds: 1),
+                                        title: const Text(
+                                          " Wallpaper set",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.green),
+                                        ),
+                                        content: const Text(
+                                            "Check out your Lock Screen wallpaper"),
+                                        actions: <Widget>[
+                                          CupertinoDialogAction(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: const Text("done",
+                                                  style: TextStyle(
+                                                      color:
+                                                          Colors.deepPurple)))
+                                        ],
+                                      ));
+                            }),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.deepPurple.withOpacity(0.7),
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Set Wallpaper",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text(
+                                      "Lock Screen",
+                                      style: TextStyle(color: Colors.white70),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: (() async {
+                              String url =
+                                  'https://source.unsplash.com/random/1080x1920?$type/$index';
+                              int location =
+                                  WallpaperManagerFlutter.HOME_SCREEN;
+                              WallpaperManagerFlutter().setwallpaperfromFile(
+                                  await DefaultCacheManager()
+                                      .getSingleFile(url),
+                                  location);
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      CupertinoAlertDialog(
+                                        insetAnimationDuration:
+                                            const Duration(seconds: 1),
+                                        title: const Text(
+                                          " Wallpaper set",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.green),
+                                        ),
+                                        content: const Text(
+                                            "Check out your Home Screen wallpaper"),
+                                        actions: <Widget>[
+                                          CupertinoDialogAction(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: const Text("done",
+                                                  style: TextStyle(
+                                                      color:
+                                                          Colors.deepPurple)))
+                                        ],
+                                      ));
+                            }),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.deepPurple.withOpacity(0.7),
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Set Wallpaper",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text(
+                                      "Home Screen",
+                                      style: TextStyle(color: Colors.white70),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       )
                     ],
                   ),
                 ),
               ),
             ),
-            Positioned(
-                right: 0,
-                top: MediaQuery.of(context).size.height / 1.2,
-                child: Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          GestureDetector(
-                            onTap: () {},
-                            child: const Icon(
-                              CupertinoIcons.heart,
-                              color: Colors.white,
-                              size: 20,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          const SizedBox(width: 10),
-                          GestureDetector(
-                            child: const Icon(CupertinoIcons.share_up,
-                                color: Colors.white, size: 20),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ))
           ],
         ),
       ),
