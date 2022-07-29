@@ -14,7 +14,16 @@ class Wallpapers extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text(type),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(type),
+            const Text(
+              "Select a wallpaper to preview",
+              style: TextStyle(fontSize: 15, color: Colors.white60),
+            )
+          ],
+        ),
         backgroundColor: Colors.transparent,
         leading: IconButton(
             onPressed: (() => Navigator.pop(context)),
