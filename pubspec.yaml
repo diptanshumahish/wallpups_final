@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^3.0.1
   path_provider: ^2.0.11
   wallpaper_manager_flutter: ^0.0.2
+  flutter_styled_toast: ^2.1.3
 
 dev_dependencies:
   flutter_test:

@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpups_final/wallpapers/fullimage.dart';
 
+// ignore: must_be_immutable
 class Wallpapers extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   var type;
   Wallpapers({Key? key, required this.type}) : super(key: key);
 
@@ -16,7 +18,7 @@ class Wallpapers extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
             onPressed: (() => Navigator.pop(context)),
-            icon: Icon(CupertinoIcons.back)),
+            icon: const Icon(CupertinoIcons.back)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -37,12 +39,24 @@ class Wallpapers extends StatelessWidget {
                         )));
               },
               child: Container(
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: CachedNetworkImageProvider(
-                            'https://source.unsplash.com/random/1080x1920?$type/$index'),
-                        fit: BoxFit.fill),
-                    borderRadius: BorderRadius.circular(10)),
+                // ignore: sort_child_properties_last
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: CachedNetworkImage(
+                    placeholder: (context, url) {
+                      return const CupertinoActivityIndicator(
+                        color: Colors.white54,
+                      );
+                    },
+                    errorWidget: (context, url, error) {
+                      return const Icon(CupertinoIcons.alarm);
+                    },
+                    imageUrl:
+                        'https://source.unsplash.com/random/1080x1920?$type/$index',
+                  ),
+                ),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
               ),
             );
           },

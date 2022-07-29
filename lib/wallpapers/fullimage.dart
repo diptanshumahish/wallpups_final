@@ -1,12 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cache_manager/file.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:wallpaper_manager_flutter/wallpaper_manager_flutter.dart';
 
+// ignore: must_be_immutable
 class FullScreen extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   var index;
+  // ignore: prefer_typing_uninitialized_variables
   var type;
   FullScreen({Key? key, required this.index, required this.type})
       : super(key: key);
@@ -73,11 +75,10 @@ class FullScreen extends StatelessWidget {
                       onTap: (() async {
                         String url =
                             'https://source.unsplash.com/random/1080x1920?$type/$index';
-                        File Cachedimage =
-                            await DefaultCacheManager().getSingleFile(url);
                         int location = WallpaperManagerFlutter.HOME_SCREEN;
-                        WallpaperManagerFlutter()
-                            .setwallpaperfromFile(Cachedimage, location);
+                        WallpaperManagerFlutter().setwallpaperfromFile(
+                            await DefaultCacheManager().getSingleFile(url),
+                            location);
                       }),
                       child: Container(
                         margin: const EdgeInsets.symmetric(vertical: 10),

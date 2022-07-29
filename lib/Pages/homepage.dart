@@ -2,15 +2,21 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpups_final/wallpapers/displaywalls.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     final size = MediaQuery.of(context).size;
     return ListView(
+      padding: EdgeInsets.zero,
       children: [
         Stack(
           children: [
@@ -33,7 +39,7 @@ class HomePage extends StatelessWidget {
                 child: const Image(
                     fit: BoxFit.cover,
                     image: CachedNetworkImageProvider(
-                        "https://source.unsplash.com/random/1920x1080/?night"))),
+                        "https://source.unsplash.com/random/1920x1080/?purple"))),
             Positioned(
                 bottom: 0,
                 left: width / 20,
@@ -44,7 +50,7 @@ class HomePage extends StatelessWidget {
                 ))
           ],
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Padding(
           padding: EdgeInsets.all(width / 20),
           child: Text(
@@ -75,11 +81,11 @@ class HomePage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.black,
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       opacity: 0.5,
                       fit: BoxFit.cover,
                       image: CachedNetworkImageProvider(
-                          'https://source.unsplash.com/random/1920x1080?nature')),
+                          'https://source.unsplash.com/random/1920x1080?forest')),
                   borderRadius: BorderRadius.circular(5)),
               height: height / 7,
               child: Stack(children: [
@@ -110,11 +116,11 @@ class HomePage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.black,
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       opacity: 0.5,
                       fit: BoxFit.cover,
                       image: CachedNetworkImageProvider(
-                          'https://source.unsplash.com/random/1920x1080?night+sky')),
+                          'https://source.unsplash.com/random/1920x1080?night')),
                   borderRadius: BorderRadius.circular(5)),
               height: height / 7,
               child: Stack(children: [
@@ -144,7 +150,7 @@ class HomePage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.black,
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       opacity: 0.5,
                       fit: BoxFit.cover,
                       image: CachedNetworkImageProvider(
@@ -178,7 +184,7 @@ class HomePage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.black,
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       opacity: 0.5,
                       fit: BoxFit.cover,
                       image: CachedNetworkImageProvider(
@@ -212,7 +218,7 @@ class HomePage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.black,
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       opacity: 0.5,
                       fit: BoxFit.cover,
                       image: CachedNetworkImageProvider(
