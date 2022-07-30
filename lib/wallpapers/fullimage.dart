@@ -48,7 +48,7 @@ class FullScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: CachedNetworkImageProvider(
-                        'https://source.unsplash.com/random/1080x1920?$type/$index.jpg'),
+                        'https://source.unsplash.com/random/1080x1920?/$type/$index.jpg'),
                     fit: BoxFit.cover),
               ),
             ),
@@ -86,7 +86,7 @@ class FullScreen extends StatelessWidget {
                             splashColor: Colors.white,
                             onTap: (() async {
                               String url =
-                                  'https://source.unsplash.com/random/1080x1920?$type/$index.jpg';
+                                  'https://source.unsplash.com/random/1080x1920?/$type/$index.jpg';
                               int location =
                                   WallpaperManagerFlutter.BOTH_SCREENS;
                               WallpaperManagerFlutter().setwallpaperfromFile(
@@ -128,7 +128,7 @@ class FullScreen extends StatelessWidget {
                           InkWell(
                             onTap: (() async {
                               String url =
-                                  'https://source.unsplash.com/random/1080x1920?$type/$index.jpg';
+                                  'https://source.unsplash.com/random/1080x1920?/$type/$index.jpg';
                               int location =
                                   WallpaperManagerFlutter.LOCK_SCREEN;
                               WallpaperManagerFlutter().setwallpaperfromFile(
@@ -169,7 +169,7 @@ class FullScreen extends StatelessWidget {
                           InkWell(
                             onTap: (() async {
                               String url =
-                                  'https://source.unsplash.com/random/1080x1920?$type/$index.jpg';
+                                  'https://source.unsplash.com/random/1080x1920?/$type/$index.jpg';
                               int location =
                                   WallpaperManagerFlutter.HOME_SCREEN;
                               WallpaperManagerFlutter().setwallpaperfromFile(

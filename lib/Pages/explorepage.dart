@@ -80,8 +80,8 @@ class _ExplorePageState extends State<ExplorePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: ((context) => Wallpapers(
-                                      type: controller.text.trim()))));
+                                  builder: ((context) =>
+                                      Wallpapers(type: controller.text))));
                         },
                         placeholder: "Search for wallpapers",
                         placeholderStyle:
@@ -89,7 +89,7 @@ class _ExplorePageState extends State<ExplorePage> {
                         itemColor: Colors.white60,
                         padding: const EdgeInsets.all(10),
                         backgroundColor: Colors.white24,
-                      ))
+                      )),
                 ],
               ))
             ]),

@@ -32,7 +32,7 @@ class Wallpapers extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
-          itemCount: 20,
+          itemCount: 35,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisSpacing: 15,
@@ -61,7 +61,7 @@ class Wallpapers extends StatelessWidget {
                       return const Icon(CupertinoIcons.alarm);
                     },
                     imageUrl:
-                        'https://source.unsplash.com/random/1080x1920?$type/$index.jpg',
+                        'https://source.unsplash.com/random/1080x1920/?$type/$index.jpg',
                   ),
                 ),
                 decoration:

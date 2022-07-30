@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+import 'package:wallpups_final/introscreens/intro.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -93,7 +95,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
-                      "Reload all images",
+                      "Refresh Wallpapers",
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           color: Colors.white,
@@ -116,6 +118,9 @@ class _SettingsPageState extends State<SettingsPage> {
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: InkWell(
+            onTap: () {
+              launchUrlString("mailto:diptanshumahish2016@gmail.com");
+            },
             borderRadius: BorderRadius.circular(8),
             splashColor: Colors.deepPurple,
             child: Container(
@@ -137,6 +142,45 @@ class _SettingsPageState extends State<SettingsPage> {
                     SizedBox(height: 8),
                     Text(
                       "Any suggestions?",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white70,
+                          fontSize: 12),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: InkWell(
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: ((context) => const Intro())));
+            },
+            borderRadius: BorderRadius.circular(8),
+            splashColor: Colors.deepPurple,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      "Show intro Screen tips",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white,
+                          fontSize: 18),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Incase you missed them ",
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           color: Colors.white70,
