@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+
 import 'package:wallpaper_manager_flutter/wallpaper_manager_flutter.dart';
 
 // ignore: must_be_immutable
@@ -46,7 +48,7 @@ class FullScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: CachedNetworkImageProvider(
-                        'https://source.unsplash.com/random/1080x1920?$type/$index'),
+                        'https://source.unsplash.com/random/1080x1920?$type/$index.jpg'),
                     fit: BoxFit.cover),
               ),
             ),
@@ -76,9 +78,7 @@ class FullScreen extends StatelessWidget {
                             letterSpacing: 0.4,
                             fontSize: 14),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
+                      const SizedBox(height: 15),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -86,38 +86,21 @@ class FullScreen extends StatelessWidget {
                             splashColor: Colors.white,
                             onTap: (() async {
                               String url =
-                                  'https://source.unsplash.com/random/1080x1920?$type/$index';
+                                  'https://source.unsplash.com/random/1080x1920?$type/$index.jpg';
                               int location =
                                   WallpaperManagerFlutter.BOTH_SCREENS;
                               WallpaperManagerFlutter().setwallpaperfromFile(
                                   await DefaultCacheManager()
                                       .getSingleFile(url),
                                   location);
-                              showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      CupertinoAlertDialog(
-                                        insetAnimationDuration:
-                                            const Duration(seconds: 1),
-                                        title: const Text(
-                                          " Wallpaper set",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.green),
-                                        ),
-                                        content: const Text(
-                                            "Check out your new wallpaper"),
-                                        actions: <Widget>[
-                                          CupertinoDialogAction(
-                                              onPressed: () {
-                                                Navigator.pop(context);
-                                              },
-                                              child: const Text("done",
-                                                  style: TextStyle(
-                                                      color:
-                                                          Colors.deepPurple)))
-                                        ],
-                                      ));
+
+                              // ignore: use_build_context_synchronously
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      duration: Duration(seconds: 3),
+                                      backgroundColor: Colors.deepPurple,
+                                      content: Text(
+                                          "Wallpaper set for both screens")));
                             }),
                             child: Container(
                               decoration: BoxDecoration(
@@ -129,11 +112,13 @@ class FullScreen extends StatelessWidget {
                                   children: const [
                                     Text(
                                       "Set Wallpaper",
-                                      style: TextStyle(color: Colors.white),
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 13),
                                     ),
                                     Text(
                                       "Both Screens",
-                                      style: TextStyle(color: Colors.white70),
+                                      style: TextStyle(
+                                          color: Colors.white70, fontSize: 12),
                                     )
                                   ],
                                 ),
@@ -143,38 +128,20 @@ class FullScreen extends StatelessWidget {
                           InkWell(
                             onTap: (() async {
                               String url =
-                                  'https://source.unsplash.com/random/1080x1920?$type/$index';
+                                  'https://source.unsplash.com/random/1080x1920?$type/$index.jpg';
                               int location =
                                   WallpaperManagerFlutter.LOCK_SCREEN;
                               WallpaperManagerFlutter().setwallpaperfromFile(
                                   await DefaultCacheManager()
                                       .getSingleFile(url),
                                   location);
-                              showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      CupertinoAlertDialog(
-                                        insetAnimationDuration:
-                                            const Duration(seconds: 1),
-                                        title: const Text(
-                                          " Wallpaper set",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.green),
-                                        ),
-                                        content: const Text(
-                                            "Check out your Lock Screen wallpaper"),
-                                        actions: <Widget>[
-                                          CupertinoDialogAction(
-                                              onPressed: () {
-                                                Navigator.pop(context);
-                                              },
-                                              child: const Text("done",
-                                                  style: TextStyle(
-                                                      color:
-                                                          Colors.deepPurple)))
-                                        ],
-                                      ));
+                              // ignore: use_build_context_synchronously
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      duration: Duration(seconds: 3),
+                                      backgroundColor: Colors.deepPurple,
+                                      content: Text(
+                                          "Wallpaper set for lock screen")));
                             }),
                             child: Container(
                               decoration: BoxDecoration(
@@ -186,11 +153,13 @@ class FullScreen extends StatelessWidget {
                                   children: const [
                                     Text(
                                       "Set Wallpaper",
-                                      style: TextStyle(color: Colors.white),
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 13),
                                     ),
                                     Text(
                                       "Lock Screen",
-                                      style: TextStyle(color: Colors.white70),
+                                      style: TextStyle(
+                                          color: Colors.white70, fontSize: 12),
                                     )
                                   ],
                                 ),
@@ -200,38 +169,20 @@ class FullScreen extends StatelessWidget {
                           InkWell(
                             onTap: (() async {
                               String url =
-                                  'https://source.unsplash.com/random/1080x1920?$type/$index';
+                                  'https://source.unsplash.com/random/1080x1920?$type/$index.jpg';
                               int location =
                                   WallpaperManagerFlutter.HOME_SCREEN;
                               WallpaperManagerFlutter().setwallpaperfromFile(
                                   await DefaultCacheManager()
                                       .getSingleFile(url),
                                   location);
-                              showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      CupertinoAlertDialog(
-                                        insetAnimationDuration:
-                                            const Duration(seconds: 1),
-                                        title: const Text(
-                                          " Wallpaper set",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.green),
-                                        ),
-                                        content: const Text(
-                                            "Check out your Home Screen wallpaper"),
-                                        actions: <Widget>[
-                                          CupertinoDialogAction(
-                                              onPressed: () {
-                                                Navigator.pop(context);
-                                              },
-                                              child: const Text("done",
-                                                  style: TextStyle(
-                                                      color:
-                                                          Colors.deepPurple)))
-                                        ],
-                                      ));
+                              // ignore: use_build_context_synchronously
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      duration: Duration(seconds: 3),
+                                      backgroundColor: Colors.deepPurple,
+                                      content: Text(
+                                          "Wallpaper set for home screen")));
                             }),
                             child: Container(
                               decoration: BoxDecoration(
@@ -243,11 +194,13 @@ class FullScreen extends StatelessWidget {
                                   children: const [
                                     Text(
                                       "Set Wallpaper",
-                                      style: TextStyle(color: Colors.white),
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 13),
                                     ),
                                     Text(
                                       "Home Screen",
-                                      style: TextStyle(color: Colors.white70),
+                                      style: TextStyle(
+                                          color: Colors.white70, fontSize: 12),
                                     )
                                   ],
                                 ),

@@ -61,7 +61,7 @@ class Wallpapers extends StatelessWidget {
                       return const Icon(CupertinoIcons.alarm);
                     },
                     imageUrl:
-                        'https://source.unsplash.com/random/1080x1920?$type/$index',
+                        'https://source.unsplash.com/random/1080x1920?$type/$index.jpg',
                   ),
                 ),
                 decoration:

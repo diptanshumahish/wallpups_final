@@ -136,7 +136,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      "Any suggedstions?",
+                      "Any suggestions?",
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           color: Colors.white70,

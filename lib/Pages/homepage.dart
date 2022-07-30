@@ -46,23 +46,22 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   "Wallpups",
                   style: TextStyle(
-                      fontSize: size.height / 15, color: Colors.white),
+                      fontSize: size.height / 18, color: Colors.white),
                 ))
           ],
         ),
-        const SizedBox(height: 10),
         Padding(
           padding: EdgeInsets.all(width / 20),
           child: Text(
             "The best wallpapers you can have!",
-            style: TextStyle(fontSize: size.height / 45, color: Colors.white),
+            style: TextStyle(fontSize: size.height / 50, color: Colors.white70),
           ),
         ),
         Padding(
           padding: EdgeInsets.all(width / 20),
           child: Text(
             "Featured",
-            style: TextStyle(fontSize: size.height / 35, color: Colors.white),
+            style: TextStyle(fontSize: size.height / 40, color: Colors.white),
           ),
         ),
         Padding(
@@ -162,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                     right: width / 20,
                     bottom: height / 50,
                     child: Text(
-                      "dark",
+                      "Dark",
                       style: TextStyle(
                           fontSize: size.height / 35, color: Colors.white),
                     ))
