@@ -85,7 +85,7 @@ class FullScreen extends StatelessWidget {
                             letterSpacing: 0.4,
                             fontSize: 14),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
