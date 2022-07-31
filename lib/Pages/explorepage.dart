@@ -96,8 +96,8 @@ class _ExplorePageState extends State<ExplorePage> {
           ),
         ),
         SizedBox(
-          height: height - height / 2.5,
           child: Column(
+            mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(

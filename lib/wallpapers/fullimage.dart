@@ -46,21 +46,19 @@ class FullScreen extends StatelessWidget {
         ),
         body: Stack(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: CachedNetworkImage(
-                  fit: BoxFit.cover,
-                  height: MediaQuery.of(context).size.height,
-                  placeholder: (context, url) {
-                    return const CupertinoActivityIndicator(
-                      color: Colors.white54,
-                    );
-                  },
-                  errorWidget: (context, url, error) {
-                    return const Icon(CupertinoIcons.alarm);
-                  },
-                  imageUrl: url),
-            ),
+            CachedNetworkImage(
+                fit: BoxFit.cover,
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                placeholder: (context, url) {
+                  return const CupertinoActivityIndicator(
+                    color: Colors.white54,
+                  );
+                },
+                errorWidget: (context, url, error) {
+                  return const Icon(CupertinoIcons.alarm);
+                },
+                imageUrl: url),
             Positioned(
               bottom: 0,
               child: Container(
@@ -87,130 +85,136 @@ class FullScreen extends StatelessWidget {
                             letterSpacing: 0.4,
                             fontSize: 14),
                       ),
-                      const SizedBox(height: 15),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                            splashColor: Colors.white,
-                            onTap: (() async {
-                              int location =
-                                  WallpaperManagerFlutter.BOTH_SCREENS;
-                              WallpaperManagerFlutter().setwallpaperfromFile(
-                                  await DefaultCacheManager()
-                                      .getSingleFile(url),
-                                  location);
+                      Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                              splashColor: Colors.white,
+                              onTap: (() async {
+                                int location =
+                                    WallpaperManagerFlutter.BOTH_SCREENS;
+                                WallpaperManagerFlutter().setwallpaperfromFile(
+                                    await DefaultCacheManager()
+                                        .getSingleFile(url),
+                                    location);
 
-                              // ignore: use_build_context_synchronously
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      duration: Duration(seconds: 3),
-                                      backgroundColor: Colors.deepPurple,
-                                      content: Text(
-                                          "Wallpaper set for both screens")));
-                            }),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.deepPurple.withOpacity(0.7),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  children: const [
-                                    Text(
-                                      "Set Wallpaper",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 13),
-                                    ),
-                                    Text(
-                                      "Both Screens",
-                                      style: TextStyle(
-                                          color: Colors.white70, fontSize: 12),
-                                    )
-                                  ],
+                                // ignore: use_build_context_synchronously
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        duration: Duration(seconds: 3),
+                                        backgroundColor: Colors.deepPurple,
+                                        content: Text(
+                                            "Wallpaper set for both screens")));
+                              }),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.deepPurple.withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: const [
+                                      Text(
+                                        "Set Wallpaper",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 13),
+                                      ),
+                                      Text(
+                                        "Both Screens",
+                                        style: TextStyle(
+                                            color: Colors.white70,
+                                            fontSize: 12),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          InkWell(
-                            onTap: (() async {
-                              int location =
-                                  WallpaperManagerFlutter.LOCK_SCREEN;
-                              WallpaperManagerFlutter().setwallpaperfromFile(
-                                  await DefaultCacheManager()
-                                      .getSingleFile(url),
-                                  location);
-                              // ignore: use_build_context_synchronously
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      duration: Duration(seconds: 3),
-                                      backgroundColor: Colors.deepPurple,
-                                      content: Text(
-                                          "Wallpaper set for lock screen")));
-                            }),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.deepPurple.withOpacity(0.7),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  children: const [
-                                    Text(
-                                      "Set Wallpaper",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 13),
-                                    ),
-                                    Text(
-                                      "Lock Screen",
-                                      style: TextStyle(
-                                          color: Colors.white70, fontSize: 12),
-                                    )
-                                  ],
+                            InkWell(
+                              onTap: (() async {
+                                int location =
+                                    WallpaperManagerFlutter.LOCK_SCREEN;
+                                WallpaperManagerFlutter().setwallpaperfromFile(
+                                    await DefaultCacheManager()
+                                        .getSingleFile(url),
+                                    location);
+                                // ignore: use_build_context_synchronously
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        duration: Duration(seconds: 3),
+                                        backgroundColor: Colors.deepPurple,
+                                        content: Text(
+                                            "Wallpaper set for lock screen")));
+                              }),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.deepPurple.withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: const [
+                                      Text(
+                                        "Set Wallpaper",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 13),
+                                      ),
+                                      Text(
+                                        "Lock Screen",
+                                        style: TextStyle(
+                                            color: Colors.white70,
+                                            fontSize: 12),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          InkWell(
-                            onTap: (() async {
-                              int location =
-                                  WallpaperManagerFlutter.HOME_SCREEN;
-                              WallpaperManagerFlutter().setwallpaperfromFile(
-                                  await DefaultCacheManager()
-                                      .getSingleFile(url),
-                                  location);
-                              // ignore: use_build_context_synchronously
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      duration: Duration(seconds: 3),
-                                      backgroundColor: Colors.deepPurple,
-                                      content: Text(
-                                          "Wallpaper set for home screen")));
-                            }),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.deepPurple.withOpacity(0.7),
-                                  borderRadius: BorderRadius.circular(5)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  children: const [
-                                    Text(
-                                      "Set Wallpaper",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 13),
-                                    ),
-                                    Text(
-                                      "Home Screen",
-                                      style: TextStyle(
-                                          color: Colors.white70, fontSize: 12),
-                                    )
-                                  ],
+                            InkWell(
+                              onTap: (() async {
+                                int location =
+                                    WallpaperManagerFlutter.HOME_SCREEN;
+                                WallpaperManagerFlutter().setwallpaperfromFile(
+                                    await DefaultCacheManager()
+                                        .getSingleFile(url),
+                                    location);
+                                // ignore: use_build_context_synchronously
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        duration: Duration(seconds: 3),
+                                        backgroundColor: Colors.deepPurple,
+                                        content: Text(
+                                            "Wallpaper set for home screen")));
+                              }),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.deepPurple.withOpacity(0.7),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: const [
+                                      Text(
+                                        "Set Wallpaper",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 13),
+                                      ),
+                                      Text(
+                                        "Home Screen",
+                                        style: TextStyle(
+                                            color: Colors.white70,
+                                            fontSize: 12),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       )
                     ],
                   ),
