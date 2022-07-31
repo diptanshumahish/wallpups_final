@@ -19,9 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Wallpups',
       theme: ThemeData(textTheme: GoogleFonts.ibmPlexSansTextTheme().apply()),
-      // home: SplashScreen(seen: showHome),
       home: SplashScreen(seen: showHome),
     );
   }
