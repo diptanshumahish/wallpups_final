@@ -18,7 +18,7 @@ class Page4 extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(25.0),
             child: Text(
-              "Refresh your wallpapers once in a while using the Refresh wallpapers option, in settings",
+              "Refresh your wallpapers once in a while, using the Refresh wallpapers option, in settings",
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
