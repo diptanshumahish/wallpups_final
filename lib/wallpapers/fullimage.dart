@@ -1,9 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-
 import 'package:wallpaper_manager_flutter/wallpaper_manager_flutter.dart';
 
 // ignore: must_be_immutable
@@ -45,11 +43,22 @@ class FullScreen extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: CachedNetworkImageProvider(
-                        'https://source.unsplash.com/random/1080x1920?/$type/$index.jpg'),
-                    fit: BoxFit.cover),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: CachedNetworkImage(
+                  fit: BoxFit.cover,
+                  height: MediaQuery.of(context).size.height,
+                  placeholder: (context, url) {
+                    return const CupertinoActivityIndicator(
+                      color: Colors.white54,
+                    );
+                  },
+                  errorWidget: (context, url, error) {
+                    return const Icon(CupertinoIcons.alarm);
+                  },
+                  imageUrl:
+                      'https://source.unsplash.com/random/1080x1920/?$type/$index.jpg',
+                ),
               ),
             ),
             Positioned(
