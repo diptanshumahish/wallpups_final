@@ -45,6 +45,8 @@ class Wallpapers extends StatelessWidget {
                     builder: (context) => FullScreen(
                           index: index,
                           type: type,
+                          url:
+                              'https://source.unsplash.com/random/1080x1920/?$type/$index.jpg',
                         )));
               },
               child: Container(
@@ -58,7 +60,23 @@ class Wallpapers extends StatelessWidget {
                       );
                     },
                     errorWidget: (context, url, error) {
-                      return const Icon(CupertinoIcons.alarm);
+                      return Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.error_outline,
+                              color: Colors.red,
+                            ),
+                            const Text(
+                              "No Internet",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      );
                     },
                     imageUrl:
                         'https://source.unsplash.com/random/1080x1920/?$type/$index.jpg',

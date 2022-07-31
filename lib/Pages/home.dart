@@ -77,7 +77,7 @@ class _HomeState extends State<Home> {
                     IconButton(
                         onPressed: (() {
                           controller.animateToPage(0,
-                              duration: Duration(milliseconds: 400),
+                              duration: Duration(milliseconds: 150),
                               curve: Curves.easeIn);
                           setState(() {
                             page1 = true;
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
                     IconButton(
                         onPressed: (() {
                           controller.animateToPage(1,
-                              duration: Duration(milliseconds: 400),
+                              duration: Duration(milliseconds: 150),
                               curve: Curves.easeIn);
                           setState(() {
                             page1 = false;
@@ -127,7 +127,7 @@ class _HomeState extends State<Home> {
                     IconButton(
                         onPressed: (() {
                           controller.animateToPage(2,
-                              duration: Duration(milliseconds: 400),
+                              duration: Duration(milliseconds: 150),
                               curve: Curves.easeIn);
                           setState(() {
                             page1 = false;

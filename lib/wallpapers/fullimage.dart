@@ -10,7 +10,10 @@ class FullScreen extends StatelessWidget {
   var index;
   // ignore: prefer_typing_uninitialized_variables
   var type;
-  FullScreen({Key? key, required this.index, required this.type})
+  // ignore: prefer_typing_uninitialized_variables
+  var url;
+  FullScreen(
+      {Key? key, required this.index, required this.type, required this.url})
       : super(key: key);
 
   @override
@@ -42,10 +45,9 @@ class FullScreen extends StatelessWidget {
         ),
         body: Stack(
           children: [
-            Container(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: CachedNetworkImage(
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: CachedNetworkImage(
                   fit: BoxFit.cover,
                   height: MediaQuery.of(context).size.height,
                   placeholder: (context, url) {
@@ -56,10 +58,7 @@ class FullScreen extends StatelessWidget {
                   errorWidget: (context, url, error) {
                     return const Icon(CupertinoIcons.alarm);
                   },
-                  imageUrl:
-                      'https://source.unsplash.com/random/1080x1920/?$type/$index.jpg',
-                ),
-              ),
+                  imageUrl: url),
             ),
             Positioned(
               bottom: 0,
@@ -94,8 +93,6 @@ class FullScreen extends StatelessWidget {
                           InkWell(
                             splashColor: Colors.white,
                             onTap: (() async {
-                              String url =
-                                  'https://source.unsplash.com/random/1080x1920?/$type/$index.jpg';
                               int location =
                                   WallpaperManagerFlutter.BOTH_SCREENS;
                               WallpaperManagerFlutter().setwallpaperfromFile(
@@ -136,8 +133,6 @@ class FullScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: (() async {
-                              String url =
-                                  'https://source.unsplash.com/random/1080x1920?/$type/$index.jpg';
                               int location =
                                   WallpaperManagerFlutter.LOCK_SCREEN;
                               WallpaperManagerFlutter().setwallpaperfromFile(
@@ -177,8 +172,6 @@ class FullScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: (() async {
-                              String url =
-                                  'https://source.unsplash.com/random/1080x1920?/$type/$index.jpg';
                               int location =
                                   WallpaperManagerFlutter.HOME_SCREEN;
                               WallpaperManagerFlutter().setwallpaperfromFile(

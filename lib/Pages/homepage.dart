@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:wallpups_final/wallpapers/displaywalls.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,10 +38,28 @@ class _HomePageState extends State<HomePage> {
                   ).createShader(const Rect.fromLTRB(0, 0, 0, 200));
                 },
                 blendMode: BlendMode.dstIn,
-                child: const Image(
-                    fit: BoxFit.cover,
-                    image: CachedNetworkImageProvider(
-                        "https://source.unsplash.com/random/1920x1080/?purple"))),
+                child: CachedNetworkImage(
+                    errorWidget: (context, url, error) {
+                      return Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.error_outline,
+                              color: Colors.red,
+                            ),
+                            const Text(
+                              "No Internet",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                    imageUrl:
+                        'https://source.unsplash.com/random/1920x1080?purple')),
             Positioned(
                 bottom: 0,
                 left: width / 20,
@@ -79,15 +99,46 @@ class _HomePageState extends State<HomePage> {
             }),
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.black,
-                  image: const DecorationImage(
-                      opacity: 0.5,
-                      fit: BoxFit.cover,
-                      image: CachedNetworkImageProvider(
-                          'https://source.unsplash.com/random/1920x1080?forest')),
-                  borderRadius: BorderRadius.circular(5)),
+                  color: Colors.black, borderRadius: BorderRadius.circular(5)),
               height: height / 7,
               child: Stack(children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: CachedNetworkImage(
+                    width: width,
+                    placeholder: (context, url) {
+                      return const Center(
+                        child: CupertinoActivityIndicator(
+                          color: Colors.white54,
+                        ),
+                      );
+                    },
+                    fit: BoxFit.cover,
+                    color: Colors.black.withOpacity(0.3),
+                    colorBlendMode: BlendMode.darken,
+                    imageUrl:
+                        'https://source.unsplash.com/random/1920x1080?forest',
+                    errorWidget: (context, url, error) {
+                      return Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.error_outline,
+                              color: Colors.red,
+                            ),
+                            const Text(
+                              "No Internet",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 Positioned(
                     right: width / 20,
                     bottom: height / 50,
@@ -95,15 +146,16 @@ class _HomePageState extends State<HomePage> {
                       "Nature",
                       style: TextStyle(
                           fontSize: size.height / 35, color: Colors.white),
-                    ))
+                    )),
               ]),
             ),
           ),
         ),
         Padding(
           padding: EdgeInsets.all(width / 25),
-          child: GestureDetector(
-            behavior: HitTestBehavior.deferToChild,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(7),
+            splashColor: Colors.deepPurple,
             onTap: (() {
               Navigator.push(
                   context,
@@ -114,15 +166,46 @@ class _HomePageState extends State<HomePage> {
             }),
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.black,
-                  image: const DecorationImage(
-                      opacity: 0.5,
-                      fit: BoxFit.cover,
-                      image: CachedNetworkImageProvider(
-                          'https://source.unsplash.com/random/1920x1080?night')),
-                  borderRadius: BorderRadius.circular(5)),
+                  color: Colors.black, borderRadius: BorderRadius.circular(5)),
               height: height / 7,
               child: Stack(children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: CachedNetworkImage(
+                    width: width,
+                    placeholder: (context, url) {
+                      return const Center(
+                        child: CupertinoActivityIndicator(
+                          color: Colors.white54,
+                        ),
+                      );
+                    },
+                    fit: BoxFit.cover,
+                    color: Colors.black.withOpacity(0.3),
+                    colorBlendMode: BlendMode.darken,
+                    imageUrl:
+                        'https://source.unsplash.com/random/1920x1080?nightsky',
+                    errorWidget: (context, url, error) {
+                      return Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.error_outline,
+                              color: Colors.red,
+                            ),
+                            const Text(
+                              "No Internet",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 Positioned(
                     right: width / 20,
                     bottom: height / 50,
@@ -130,14 +213,16 @@ class _HomePageState extends State<HomePage> {
                       "Night Skies",
                       style: TextStyle(
                           fontSize: size.height / 35, color: Colors.white),
-                    ))
+                    )),
               ]),
             ),
           ),
         ),
         Padding(
           padding: EdgeInsets.all(width / 25),
-          child: GestureDetector(
+          child: InkWell(
+            borderRadius: BorderRadius.circular(7),
+            splashColor: Colors.deepPurple,
             onTap: (() {
               Navigator.push(
                   context,
@@ -148,15 +233,46 @@ class _HomePageState extends State<HomePage> {
             }),
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.black,
-                  image: const DecorationImage(
-                      opacity: 0.5,
-                      fit: BoxFit.cover,
-                      image: CachedNetworkImageProvider(
-                          'https://source.unsplash.com/random/1920x1080?dark')),
-                  borderRadius: BorderRadius.circular(5)),
+                  color: Colors.black, borderRadius: BorderRadius.circular(5)),
               height: height / 7,
               child: Stack(children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: CachedNetworkImage(
+                    width: width,
+                    placeholder: (context, url) {
+                      return const Center(
+                        child: CupertinoActivityIndicator(
+                          color: Colors.white54,
+                        ),
+                      );
+                    },
+                    fit: BoxFit.cover,
+                    color: Colors.black.withOpacity(0.3),
+                    colorBlendMode: BlendMode.darken,
+                    imageUrl:
+                        'https://source.unsplash.com/random/1920x1080?dark',
+                    errorWidget: (context, url, error) {
+                      return Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.error_outline,
+                              color: Colors.red,
+                            ),
+                            const Text(
+                              "No Internet",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 Positioned(
                     right: width / 20,
                     bottom: height / 50,
@@ -164,33 +280,66 @@ class _HomePageState extends State<HomePage> {
                       "Dark",
                       style: TextStyle(
                           fontSize: size.height / 35, color: Colors.white),
-                    ))
+                    )),
               ]),
             ),
           ),
         ),
         Padding(
           padding: EdgeInsets.all(width / 25),
-          child: GestureDetector(
+          child: InkWell(
+            borderRadius: BorderRadius.circular(7),
+            splashColor: Colors.deepPurple,
             onTap: (() {
               Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: ((context) => Wallpapers(
-                            type: "City line",
+                            type: "City Line",
                           ))));
             }),
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.black,
-                  image: const DecorationImage(
-                      opacity: 0.5,
-                      fit: BoxFit.cover,
-                      image: CachedNetworkImageProvider(
-                          'https://source.unsplash.com/random/1920x1080?sunset+city')),
-                  borderRadius: BorderRadius.circular(5)),
+                  color: Colors.black, borderRadius: BorderRadius.circular(5)),
               height: height / 7,
               child: Stack(children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: CachedNetworkImage(
+                    width: width,
+                    placeholder: (context, url) {
+                      return const Center(
+                        child: CupertinoActivityIndicator(
+                          color: Colors.white54,
+                        ),
+                      );
+                    },
+                    fit: BoxFit.cover,
+                    color: Colors.black.withOpacity(0.3),
+                    colorBlendMode: BlendMode.darken,
+                    imageUrl:
+                        'https://source.unsplash.com/random/1920x1080?sunset+city',
+                    errorWidget: (context, url, error) {
+                      return Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.error_outline,
+                              color: Colors.red,
+                            ),
+                            const Text(
+                              "No Internet",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 Positioned(
                     right: width / 20,
                     bottom: height / 50,
@@ -198,45 +347,78 @@ class _HomePageState extends State<HomePage> {
                       "City Lines",
                       style: TextStyle(
                           fontSize: size.height / 35, color: Colors.white),
-                    ))
+                    )),
               ]),
             ),
           ),
         ),
         Padding(
           padding: EdgeInsets.all(width / 25),
-          child: GestureDetector(
+          child: InkWell(
+            borderRadius: BorderRadius.circular(7),
+            splashColor: Colors.deepPurple,
             onTap: (() {
               Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: ((context) => Wallpapers(
-                            type: "Purple",
+                            type: "purple",
                           ))));
             }),
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.black,
-                  image: const DecorationImage(
-                      opacity: 0.5,
-                      fit: BoxFit.cover,
-                      image: CachedNetworkImageProvider(
-                          'https://source.unsplash.com/random/1920x1080?purple')),
-                  borderRadius: BorderRadius.circular(5)),
+                  color: Colors.black, borderRadius: BorderRadius.circular(5)),
               height: height / 7,
               child: Stack(children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: CachedNetworkImage(
+                    width: width,
+                    placeholder: (context, url) {
+                      return const Center(
+                        child: CupertinoActivityIndicator(
+                          color: Colors.white54,
+                        ),
+                      );
+                    },
+                    fit: BoxFit.cover,
+                    color: Colors.black.withOpacity(0.3),
+                    colorBlendMode: BlendMode.darken,
+                    imageUrl:
+                        'https://source.unsplash.com/random/1920x1080?purple',
+                    errorWidget: (context, url, error) {
+                      return Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Icon(
+                              Icons.error_outline,
+                              color: Colors.red,
+                            ),
+                            const Text(
+                              "No Internet",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 Positioned(
                     right: width / 20,
                     bottom: height / 50,
                     child: Text(
-                      "Purples",
+                      "Purple",
                       style: TextStyle(
                           fontSize: size.height / 35, color: Colors.white),
-                    ))
+                    )),
               ]),
             ),
           ),
-        )
+        ),
       ],
     );
   }
