@@ -218,7 +218,7 @@ class _ExplorePageState extends State<ExplorePage> {
                               context,
                               MaterialPageRoute(
                                   builder: ((context) =>
-                                      Wallpapers(type: "anime"))));
+                                      Wallpapers(type: "Japan"))));
                         }),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(7),

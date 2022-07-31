@@ -46,7 +46,7 @@ class Wallpapers extends StatelessWidget {
                           index: index,
                           type: type,
                           url:
-                              'https://source.unsplash.com/random/1080x1920/?$type/$index.jpg',
+                              'https://source.unsplash.com/random/2160x3840/?$type/$index.jpg',
                         )));
               },
               child: Container(
@@ -79,7 +79,7 @@ class Wallpapers extends StatelessWidget {
                       );
                     },
                     imageUrl:
-                        'https://source.unsplash.com/random/1080x1920/?$type/$index.jpg',
+                        'https://source.unsplash.com/random/2160x3840/?$type/$index.jpg',
                   ),
                 ),
                 decoration:
