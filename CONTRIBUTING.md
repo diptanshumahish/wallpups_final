@@ -8,25 +8,25 @@ If you're new to _git_ and/or _GitHub_, we suggest you go through [the GitHub Gu
    - Using SSH
 
      ```shell
-     git clone git@github.com:Abhirup-02/Timer.git
+     git clone git@github.com:diptanshumahish/wallpups_final.git
      ```
 
    - Using HTTPS
 
      ```shell
-     git clone https://github.com/Abhirup-02/Timer.git
+     git clone https://github.com/diptanshumahish/wallpups_final.git
      ```
 
    - Using GitHub CLI
 
      ```shell
-     gh repo clone gh repo clone Abhirup-02/Timer
+     gh repo clone diptanshumahish/wallpups_final
      ```
 
 3. Create a new branch 
 4. Start hacking on the new branch
 5. Commit and push to the new branch
-6. Make a pull request towards the original repository ([Abhirup-02/Timer](https://github.com/Abhirup-02/Timer))
+6. Make a pull request towards the original repository ([diptanshumahish/wallpups_final](https://github.com/diptanshumahish/wallpups_final))
 
 ## Pull Request Guidelines
 
@@ -39,6 +39,6 @@ Please ensure your pull request adheres to the following guidelines:
 > You don't need to worry as admins will request the changes needed in the pull request before merging.
 ## Feedback:
 
-If you have any feedback or suggestions please create an  <a href="https://github.com/Abhirup-02/Timer/issues">issue</a> where you can mention some new features or extensions that will enhance this project✨.
+If you have any feedback or suggestions please create an  <a href="https://github.com/diptanshumahish/wallpups_final/issues">issue</a> where you can mention some new features or extensions that will enhance this project.
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------->
