@@ -1,13 +1,13 @@
 
 # Wallpups
 
-Wallpups is a multi-platform open source app being developed using Flutter.
+Wallpups is a multi-platform open source app being developed with the help of Flutter.
 
 This App mainly focuses on an innovative and beautiful User Interface, and is basically a 
-wallpaper app, which for the time collects data using the random image generator provided
+wallpaper app, which for the time collects data using random image generator provided
 by Unsplash.
 
-this app is available on playstore
+This app is available on playstore
 
 
 ## Authors
@@ -18,6 +18,6 @@ this app is available on playstore
 ## Features
 
 - Beautiful UI
-- Beautiful Wallpapers colllection
+- Beautiful Wallpapers Colllection
 - Free to use
 - Cross platform
