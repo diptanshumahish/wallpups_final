@@ -21,3 +21,9 @@ This app is available on playstore
 - Beautiful Wallpapers Colllection
 - Free to use
 - Cross platform
+
+
+# Coming soon
+- More new wallpapers.
+- New UI to using staggered grid view.
+- Options to add more limits to display number of results.
